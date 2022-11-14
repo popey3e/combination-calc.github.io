@@ -1,3 +1,5 @@
+alert("This site is used to calculate factorials and combinations")
+
 const nFactorial = document.getElementById("inp-n-factorial")
 const factorialResult = document.getElementById("factorial-result")
 const nCombination = document.getElementById("inp-n-combination")
