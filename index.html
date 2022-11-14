@@ -2,74 +2,66 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Test</title>
+	<title>Combination & Factorial Calc.</title>
+	<link rel="stylesheet" href="style.css">
 </head>
-<style>
-*,html,body {
-	background-color: #fff;
-	font-style: arial;
-	color: #hhh;
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-#container {
-	width: 100vw;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-}
-
-button[id="submit"] {
-	width: 100%;
-}
-
-</style>
 <body>
 	<div id="container">
 		<div class="wrapper">
-			<h1>Combination Calc.</h1>
-				<form><table>
+			<img id="kamu-nanya" src="img/kamu-nanya.jpg" alt="kamu nanya?">
+		</div>
+
+		<!-- For Factorial -->
+		<div class="wrapper">
+			<h2>Factorial (n!)</h2>
+			<table>
 				<tr>
-					<td><label for="inp-n">Input n</label></td>
-					<td>: <input id="inp-n"></td>	
+					<td><label for="inp-n-factorial">Input n!</label></td>
+					<td><input id="inp-n-factorial"></td>
+					<td><button onclick="factorialCalc(nFactorial.value)" class="submit">Submit</button></td>
+				</tr>
+				<tr>
+					<td>Result :</td>
+					<td><span id="factorial-result"></span></td>
+					<td><button onclick="resetFactorial()" class="reset">Reset</button></td>
+				</tr>
+			</table>
+		</div>
+
+		<!-- For Combination -->
+		<div class="wrapper">
+			<h2>Combination Calc.</h2>
+				<table>
+				<tr>
+					<td><label for="inp-n-combination">Input n</label></td>
+					<td><input id="inp-n-combination"></td>	
 				<tr>
 				<tr>
-					<td><label for="inp-r">Input r</label></td>
-					<td>: <input id="inp-r"></td>	
+					<td><label for="inp-r-combination">Input r</label></td>
+					<td><input id="inp-r-combination"></td>	
 				<tr>
 				<tr>
 					<td colspan="2">
-						<button onclick="calc(n.value, r.value)" id="submit">Submit</button>
+						<button onclick="combinationCalc(nCombination.value, rCombination.value)" class="submit">Submit</button>
 					</td>
 				</tr>
 				<tr>
-					<td><label for="result">Result</label></td>
-					<td>: <span id="result"></span></td>	
+					<td><label for="combination-result">Result</label></td>
+					<td>: <span id="combination-result"></span></td>	
 				<tr>
-			</table></form>
+				<tr>
+					<td colspan="2">
+						<button onclick="resetCombination()" class="reset">Reset</button>
+					</td>
+				<tr>
+				<tr>
+					<td colspan="2">
+						<button onclick="resetAll()" class="reset">Reset All</button>
+					</td>
+				</tr>	
+			</table>
 		</div>
 	</div>
-	<script>
-	const n = document.getElementById("inp-n")
-	const r = document.getElementById("inp-r")
-	const result = document.getElementById("result")
-
-	const factorial = x => {
-		if(x == 0 || x == 1){
-			return 1
-		}else {
-			return x * factorial(x-1)
-		}
-	}	
-	
-	const calc = (a,b) => {
-		let myres = factorial(a) / (factorial(a-b) * factorial(b))
-		result.innerHTML = myres
-		
-	}
-
-	</script>
+	<script src="calc.js"></script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+*, html, body {
+	background-color: #fff;
+	font-style: arial;
+    color: #000;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#container {
+	width: 100vw;
+	height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#kamu-nanya {
+    margin: 10px;
+    width: 250px;
+    border-radius: 30%;
+    box-shadow: 0 0 20px rgb(217, 142, 37);
+}
+
+table, tr,td {
+    padding: 5px;
+}
+
+button[class="submit"],button[class="reset"] {
+	width: 100%;
+}
+
+button[class="submit"]:hover,button[class="reset"]:hover {
+	cursor: pointer;
+    background-color: azure;
+}
+
+footer {
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/* Media */
