@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Test</title>
+</head>
+<style>
+*,html,body {
+	background-color: #fff;
+	font-style: arial;
+	color: #hhh;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#container {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+}
+
+button[id="submit"] {
+	width: 100%;
+}
+
+</style>
+<body>
+	<div id="container">
+		<div class="wrapper">
+			<h1>Combination Calc.</h1>
+				<form><table>
+				<tr>
+					<td><label for="inp-n">Input n</label></td>
+					<td>: <input id="inp-n"></td>	
+				<tr>
+				<tr>
+					<td><label for="inp-r">Input r</label></td>
+					<td>: <input id="inp-r"></td>	
+				<tr>
+				<tr>
+					<td colspan="2">
+						<button onclick="calc(n.value, r.value)" id="submit">Submit</button>
+					</td>
+				</tr>
+				<tr>
+					<td><label for="result">Result</label></td>
+					<td>: <span id="result"></span></td>	
+				<tr>
+			</table></form>
+		</div>
+	</div>
+	<script>
+	const n = document.getElementById("inp-n")
+	const r = document.getElementById("inp-r")
+	const result = document.getElementById("result")
+
+	const factorial = x => {
+		if(x == 0 || x == 1){
+			return 1
+		}else {
+			return x * factorial(x-1)
+		}
+	}	
+	
+	const calc = (a,b) => {
+		let myres = factorial(a) / (factorial(a-b) * factorial(b))
+		result.innerHTML = myres
+		
+	}
+
+	</script>
+</body>
+</html>
