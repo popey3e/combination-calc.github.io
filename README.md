@@ -1,5 +1,5 @@
 # combination-calc.github.io
 
-This site is used to calculate factorials and combinations
+This site uses to calculate factorials and combinations
 
 enjoy 
